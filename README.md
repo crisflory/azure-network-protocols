@@ -31,6 +31,8 @@ Connect and log into Client-1 as a regular user (mydomain<someuser>).
 Step 3: Folder Creation on DC-1
 
 On DC-1, create four folders on the C:\ drive: "read-access," "write-access," "no-access," and "accounting."
+![image](https://github.com/crisflory/azure-network-protocols/assets/147748310/d50d0c73-6cef-4430-ac65-640494da47d0)
+
 
 Step 4: Set Permissions for "Domain Users" Group
 
