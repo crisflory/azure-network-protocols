@@ -105,11 +105,15 @@ Type in your login information (username, password, etc.) in the Linux SSH conne
 ![image](https://github.com/crisflory/azure-network-protocols/assets/147748310/1e858710-46a5-4691-85cb-579a5c07051f)
 
 Exit the SSH connection by typing 'exit' and pressing Enter.
+
 Part 2.3: DHCP Traffic
 
 In Wireshark, filter for DHCP traffic only.
 From your Windows 10 VM, try to get a new IP address from the command line using 'ipconfig /renew.'
 Observe the DHCP traffic in Wireshark.
+
+![image](https://github.com/crisflory/azure-network-protocols/assets/147748310/eab33049-e1c5-4c1e-a615-d47d0f26dc0a)
+
 Part 2.4: DNS Traffic
 
 In Wireshark, filter for DNS traffic only.
