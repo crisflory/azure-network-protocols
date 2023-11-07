@@ -22,13 +22,16 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 Step 1: Create Sample File Shares with Varied Permissions
 
 Create sample file shares with different permission settings.
+
 Step 2: Connect and Log into DC-1 and Client-1
 
 Connect and log into DC-1 using your domain admin account (mydomain.com\jane_admin).
 Connect and log into Client-1 as a regular user (mydomain<someuser>).
+
 Step 3: Folder Creation on DC-1
 
 On DC-1, create four folders on the C:\ drive: "read-access," "write-access," "no-access," and "accounting."
+
 Step 4: Set Permissions for "Domain Users" Group
 
 For the "Domain Users" group, set the following permissions for the respective folders:
@@ -40,6 +43,7 @@ Step 5: Attempt to Access File Shares as a Normal User
 
 On Client-1, navigate to the shared folder by entering "\dc-1" in the Run dialog.
 Try to access the folders you created earlier. Note which folders you can access and which ones you can create content in, and evaluate whether it makes sense.
+
 Step 6: Create an "ACCOUNTANTS" Security Group and Test Access
 
 Return to DC-1 and, within Active Directory, create a security group named "ACCOUNTANTS."
