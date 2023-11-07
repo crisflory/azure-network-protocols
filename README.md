@@ -19,47 +19,52 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 - Windows 10 (21H2)
 - Ubuntu Server 20.04
 
-Step 1: Create Sample File Shares with Varied Permissions
 
-Create sample file shares with different permission settings.
+Part 1: Setting Up Resources
 
-Step 2: Connect and Log into DC-1 and Client-1
+Create a Resource Group.
+![image](https://github.com/crisflory/azure-network-protocols/assets/147748310/c8a323e5-5e42-411f-9ba9-15a7bab08bb6)
 
-Connect and log into DC-1 using your domain admin account (mydomain.com\jane_admin).
-Connect and log into Client-1 as a regular user (mydomain<someuser>).
+Create a Windows 10 Virtual Machine (VM).
+When creating the VM, choose the Resource Group you created earlier.
+During VM creation, allow it to create a new Virtual Network (Vnet) and Subnet.
+Create a Linux (Ubuntu) Virtual Machine.
+When creating the Linux VM, select the previously created Resource Group and Virtual Network.
+Observe your Virtual Network using Network Watcher.
 
-Step 3: Folder Creation on DC-1
+Part 2: Observing Network Traffic
 
-On DC-1, create four folders on the C:\ drive: "read-access," "write-access," "no-access," and "accounting."
-![image](https://github.com/crisflory/azure-network-protocols/assets/147748310/d50d0c73-6cef-4430-ac65-640494da47d0)
+Part 2.1: ICMP Traffic (Ping)
 
+Use Remote Desktop to connect to your Windows 10 Virtual Machine.
+Inside your Windows 10 VM, install Wireshark.
+Open Wireshark and filter for ICMP traffic (Ping).
+Find the private IP address of the Ubuntu VM and attempt to ping it from within the Windows 10 VM.
+Observe ping requests and replies in Wireshark.
+From the Windows 10 VM, use the command line or PowerShell to ping a public website (e.g., www.google.com) and observe the traffic in Wireshark.
+Start a continuous ping from your Windows 10 VM to your Ubuntu VM.
+Open the Network Security Group for your Ubuntu VM and disable incoming (inbound) ICMP traffic.
+In the Windows 10 VM, observe ICMP traffic in Wireshark and the command line Ping activity.
+Re-enable ICMP traffic in the Network Security Group for your Ubuntu VM.
+In the Windows 10 VM, observe ICMP traffic in Wireshark and the command line Ping activity (should start working).
+Stop the ping activity.
+Part 2.2: SSH Traffic
 
-Step 4: Set Permissions for "Domain Users" Group
+In Wireshark, filter for SSH traffic only.
+From your Windows 10 VM, SSH into your Ubuntu Virtual Machine using its private IP address.
+Type in your login information (username, password, etc.) in the Linux SSH connection and observe SSH traffic in Wireshark.
+Exit the SSH connection by typing 'exit' and pressing Enter.
+Part 2.3: DHCP Traffic
 
-For the "Domain Users" group, set the following permissions for the respective folders:
-"read-access" folder: Permission - "Read"
-"write-access" folder: Permission - "Read/Write"
-"no-access" folder: Permission - "Read/Write"
-(Skip configuring permissions for the "accounting" folder for now)
+In Wireshark, filter for DHCP traffic only.
+From your Windows 10 VM, try to get a new IP address from the command line using 'ipconfig /renew.'
+Observe the DHCP traffic in Wireshark.
+Part 2.4: DNS Traffic
 
-![image](https://github.com/crisflory/azure-network-protocols/assets/147748310/f5a05c85-fab7-4b88-9a71-46d3556d282c)
+In Wireshark, filter for DNS traffic only.
+From your Windows 10 VM's command line, use 'nslookup' to find the IP addresses of google.com and disney.com.
+Observe the DNS traffic in Wireshark.
+Part 2.5: RDP Traffic (Remote Desktop Protocol)
 
-Step 5: Attempt to Access File Shares as a Normal User
-
-On Client-1, navigate to the shared folder by entering "\dc-1" in the Run dialog.
-Try to access the folders you created earlier. Note which folders you can access and which ones you can create content in, and evaluate whether it makes sense.
-
-Step 6: Create an "ACCOUNTANTS" Security Group and Test Access
-
-Return to DC-1 and, within Active Directory, create a security group named "ACCOUNTANTS."
-Configure the following permissions for the "accounting" folder you created earlier:
-"accounting" folder: Group - "ACCOUNTANTS," Permission - "Read/Write"
-On Client-1, attempt to access the "accountants" folder as <someuser>. It should result in a failure.
-Log out of Client-1 as <someuser>.
-On DC-1, add <someuser> to the "ACCOUNTANTS" Security Group.
-Sign back into Client-1 as <someuser> and attempt to access the "accounting" share at "\DC-1". Check if access is now granted.
-These rephrased steps maintain the original instructions while simplifying the language for clarity. If you require any further modifications or clarifications, please let me know.
-
-
-
-
+In Wireshark, filter for RDP traffic only (tcp.port == 3389).
+Observe the continuous stream of traffic. This happens because RDP is continuously transmitting data when connected to another computer, rather than just when you perform specific activities.
