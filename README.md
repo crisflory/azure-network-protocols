@@ -40,12 +40,16 @@ When creating the Linux VM, select the previously created Resource Group and Vir
 
 Observe your Virtual Network using Network Watcher.
 
-Microsoft.Network/net...Part 2: Observing Network Traffic
+
 
 Part 2.1: ICMP Traffic (Ping)
 
-Use Remote Desktop to connect to your Windows 10 Virtual Machine.
+Use Remote Desktop to connect to your Windows 10 Virtual Machine using its Public IP address and username and password created.
+![image](https://github.com/crisflory/azure-network-protocols/assets/147748310/3110b855-4584-4d18-8143-64c60d9ed1fa)
+
 Inside your Windows 10 VM, install Wireshark.
+![image](https://github.com/crisflory/azure-network-protocols/assets/147748310/cd1f49f5-3bdd-41d7-abba-25b3b62fa3c9)
+
 Open Wireshark and filter for ICMP traffic (Ping).
 Find the private IP address of the Ubuntu VM and attempt to ping it from within the Windows 10 VM.
 Observe ping requests and replies in Wireshark.
