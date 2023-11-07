@@ -39,6 +39,7 @@ For the "Domain Users" group, set the following permissions for the respective f
 "write-access" folder: Permission - "Read/Write"
 "no-access" folder: Permission - "Read/Write"
 (Skip configuring permissions for the "accounting" folder for now)
+
 Step 5: Attempt to Access File Shares as a Normal User
 
 On Client-1, navigate to the shared folder by entering "\dc-1" in the Run dialog.
