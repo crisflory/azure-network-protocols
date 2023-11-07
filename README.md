@@ -27,10 +27,9 @@ Create a Resource Group.
 
 Create a Windows 10 Virtual Machine (VM).
 When creating the VM, choose the Resource Group you created earlier.
-![image](https://github.com/crisflory/azure-network-protocols/assets/147748310/bc78f365-3b85-4fbc-8109-a892fe08c5d2)
+![image](https://github.com/crisflory/azure-network-protocols/assets/147748310/5064da15-3ee9-489b-ad3d-513dfda53c1e)
 
 During VM creation, allow it to create a new Virtual Network (Vnet) and Subnet.
-![image](https://github.com/crisflory/azure-network-protocols/assets/147748310/389f42a5-98ee-4894-9f30-3018f7bb9670)
 
 Create a Linux (Ubuntu) Virtual Machine.
 When creating the Linux VM, select the previously created Resource Group and Virtual Network.
