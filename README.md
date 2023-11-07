@@ -40,7 +40,7 @@ When creating the Linux VM, select the previously created Resource Group and Vir
 
 Observe your Virtual Network using Network Watcher.
 
-Part 2: Observing Network Traffic
+Microsoft.Network/net...Part 2: Observing Network Traffic
 
 Part 2.1: ICMP Traffic (Ping)
 
