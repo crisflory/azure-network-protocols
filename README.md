@@ -33,8 +33,11 @@ During VM creation, allow it to create a new Virtual Network (Vnet) and Subnet.
 
 ![image](https://github.com/crisflory/azure-network-protocols/assets/147748310/5f8b8492-25b6-4451-a513-c43a658413dd)
 
+
 Create a Linux (Ubuntu) Virtual Machine.
 When creating the Linux VM, select the previously created Resource Group and Virtual Network.
+![image](https://github.com/crisflory/azure-network-protocols/assets/147748310/6da2e4e5-a4e0-4cd9-9513-814ba3393f60)
+
 Observe your Virtual Network using Network Watcher.
 
 Part 2: Observing Network Traffic
