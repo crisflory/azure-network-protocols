@@ -50,11 +50,23 @@ Use Remote Desktop to connect to your Windows 10 Virtual Machine using its Publi
 Inside your Windows 10 VM, install Wireshark.
 ![image](https://github.com/crisflory/azure-network-protocols/assets/147748310/cd1f49f5-3bdd-41d7-abba-25b3b62fa3c9)
 
+![image](https://github.com/crisflory/azure-network-protocols/assets/147748310/22e913aa-1995-4e30-bee9-03ed67a06376)
+
 Open Wireshark and filter for ICMP traffic (Ping).
+![image](https://github.com/crisflory/azure-network-protocols/assets/147748310/fda5dd53-1319-4886-8ea4-a57afa708e04)
+
 Find the private IP address of the Ubuntu VM and attempt to ping it from within the Windows 10 VM.
+![image](https://github.com/crisflory/azure-network-protocols/assets/147748310/bb58648b-0f93-4999-97ae-bbb6d514f609)
+
 Observe ping requests and replies in Wireshark.
+![image](https://github.com/crisflory/azure-network-protocols/assets/147748310/112c8171-cd99-41c6-ae3e-8563ba2b1c52)
+
 From the Windows 10 VM, use the command line or PowerShell to ping a public website (e.g., www.google.com) and observe the traffic in Wireshark.
-Start a continuous ping from your Windows 10 VM to your Ubuntu VM.
+![image](https://github.com/crisflory/azure-network-protocols/assets/147748310/db618cb2-6ef5-4354-9295-1865a6049a58)
+
+click restart current capture on Wireshark and start a continuous ping from your Windows 10 VM to your Ubuntu VM.
+![image](https://github.com/crisflory/azure-network-protocols/assets/147748310/c82e4067-ef29-4130-8996-9965cd3e7c23)
+
 Open the Network Security Group for your Ubuntu VM and disable incoming (inbound) ICMP traffic.
 In the Windows 10 VM, observe ICMP traffic in Wireshark and the command line Ping activity.
 Re-enable ICMP traffic in the Network Security Group for your Ubuntu VM.
