@@ -96,8 +96,14 @@ Stop the ping activity.
 Part 2.2: SSH Traffic
 
 In Wireshark, filter for SSH traffic only.
+
 From your Windows 10 VM, SSH into your Ubuntu Virtual Machine using its private IP address.
+![image](https://github.com/crisflory/azure-network-protocols/assets/147748310/30b79056-328b-499e-afb2-f0d80be2b48e)
+
 Type in your login information (username, password, etc.) in the Linux SSH connection and observe SSH traffic in Wireshark.
+![image](https://github.com/crisflory/azure-network-protocols/assets/147748310/c60e2c93-ba45-4700-8882-38c7522d3de6)
+![image](https://github.com/crisflory/azure-network-protocols/assets/147748310/1e858710-46a5-4691-85cb-579a5c07051f)
+
 Exit the SSH connection by typing 'exit' and pressing Enter.
 Part 2.3: DHCP Traffic
 
