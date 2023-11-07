@@ -6,10 +6,6 @@
 In this tutorial, we observe various network traffic to and from Azure Virtual Machines with Wireshark as well as experiment with Network Security Groups. <br />
 
 
-<h2>Video Demonstration</h2>
-
-- ### [YouTube: Azure Virtual Machines, Wireshark, and Network Security Groups](https://www.youtube.com)
-
 <h2>Environments and Technologies Used</h2>
 
 - Microsoft Azure (Virtual Machines/Compute)
@@ -23,35 +19,38 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 - Windows 10 (21H2)
 - Ubuntu Server 20.04
 
-<h2>High-Level Steps</h2>
+Step 1: Create Sample File Shares with Varied Permissions
 
-- Step 1
-- Step 2
-- Step 3
-- Step 4
+Create sample file shares with different permission settings.
+Step 2: Connect and Log into DC-1 and Client-1
 
-<h2>Actions and Observations</h2>
+Connect and log into DC-1 using your domain admin account (mydomain.com\jane_admin).
+Connect and log into Client-1 as a regular user (mydomain<someuser>).
+Step 3: Folder Creation on DC-1
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
+On DC-1, create four folders on the C:\ drive: "read-access," "write-access," "no-access," and "accounting."
+Step 4: Set Permissions for "Domain Users" Group
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
+For the "Domain Users" group, set the following permissions for the respective folders:
+"read-access" folder: Permission - "Read"
+"write-access" folder: Permission - "Read/Write"
+"no-access" folder: Permission - "Read/Write"
+(Skip configuring permissions for the "accounting" folder for now)
+Step 5: Attempt to Access File Shares as a Normal User
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
+On Client-1, navigate to the shared folder by entering "\dc-1" in the Run dialog.
+Try to access the folders you created earlier. Note which folders you can access and which ones you can create content in, and evaluate whether it makes sense.
+Step 6: Create an "ACCOUNTANTS" Security Group and Test Access
+
+Return to DC-1 and, within Active Directory, create a security group named "ACCOUNTANTS."
+Configure the following permissions for the "accounting" folder you created earlier:
+"accounting" folder: Group - "ACCOUNTANTS," Permission - "Read/Write"
+On Client-1, attempt to access the "accountants" folder as <someuser>. It should result in a failure.
+Log out of Client-1 as <someuser>.
+On DC-1, add <someuser> to the "ACCOUNTANTS" Security Group.
+Sign back into Client-1 as <someuser> and attempt to access the "accounting" share at "\DC-1". Check if access is now granted.
+These rephrased steps maintain the original instructions while simplifying the language for clarity. If you require any further modifications or clarifications, please let me know.
+
+
+
+
