@@ -87,8 +87,12 @@ In the Windows 10 VM, observe ICMP traffic in Wireshark and the command line Pin
 ![image](https://github.com/crisflory/azure-network-protocols/assets/147748310/e2f1e5fb-f892-41be-b943-784f57277f8b)
 
 Re-enable ICMP traffic in the Network Security Group for your Ubuntu VM.
+
 In the Windows 10 VM, observe ICMP traffic in Wireshark and the command line Ping activity (should start working).
 Stop the ping activity.
+
+![image](https://github.com/crisflory/azure-network-protocols/assets/147748310/156311b4-b960-4100-b9d0-17d43e950294)
+
 Part 2.2: SSH Traffic
 
 In Wireshark, filter for SSH traffic only.
