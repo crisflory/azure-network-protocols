@@ -42,7 +42,7 @@ For the "Domain Users" group, set the following permissions for the respective f
 "no-access" folder: Permission - "Read/Write"
 (Skip configuring permissions for the "accounting" folder for now)
 
-![image](https://github.com/crisflory/azure-network-protocols/assets/147748310/7ac12c64-7b25-4827-b852-0e04df2cbd60)
+![image](https://github.com/crisflory/azure-network-protocols/assets/147748310/f5a05c85-fab7-4b88-9a71-46d3556d282c)
 
 Step 5: Attempt to Access File Shares as a Normal User
 
