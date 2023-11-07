@@ -68,6 +68,8 @@ click restart current capture on Wireshark and start a continuous ping from your
 ![image](https://github.com/crisflory/azure-network-protocols/assets/147748310/c82e4067-ef29-4130-8996-9965cd3e7c23)
 
 Open the Network Security Group for your Ubuntu VM and disable incoming (inbound) ICMP traffic.
+![image](https://github.com/crisflory/azure-network-protocols/assets/147748310/815b3ee6-43e4-43bd-a394-1f3f39f917db)
+
 In the Windows 10 VM, observe ICMP traffic in Wireshark and the command line Ping activity.
 Re-enable ICMP traffic in the Network Security Group for your Ubuntu VM.
 In the Windows 10 VM, observe ICMP traffic in Wireshark and the command line Ping activity (should start working).
