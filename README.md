@@ -116,9 +116,13 @@ Observe the DHCP traffic in Wireshark.
 
 Part 2.4: DNS Traffic
 
-In Wireshark, filter for DNS traffic only.
+In Wireshark, filter for DNS traffic only like we did with DHCP traffic.
 From your Windows 10 VM's command line, use 'nslookup' to find the IP addresses of google.com and disney.com.
 Observe the DNS traffic in Wireshark.
+
+![image](https://github.com/crisflory/azure-network-protocols/assets/147748310/7b5ce3d6-f14a-4519-90b6-0a13c524e69d)
+
+
 Part 2.5: RDP Traffic (Remote Desktop Protocol)
 
 In Wireshark, filter for RDP traffic only (tcp.port == 3389).
